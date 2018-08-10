@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "f4a3c5ca-e0d9-48ed-bf73-8fc2a110150a",
+		"name": "weather-postman-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Weather",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 1, \n\t\"date\": \"1985-04-16\", \n\t\"location\": {\"lat\": 36.1189, \"lon\": -86.6892, \"city\": \"Jenkintown\", \"state\": \"Pensilvania\"}, \n\t\"temperature\": [37.3, 36.8, 36.4, 36.0, 35.6, 35.3, 35.0, 34.9, 35.8, 38.0, 40.2, 42.3, 43.8, 44.9, 45.5, 45.7, 44.9, 43.0, 41.7, 40.8, 39.9, 39.2, 38.6, 38.1]\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/weather/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"weather",
+						""
+					]
+				},
+				"description": "Create Weather"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all weather",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 1, \n\t\"date\": \"1985-04-16\", \n\t\"location\": {\"lat\": 36.1189, \"lon\": -86.6892, \"city\": \"Jenkintown\", \"state\": \"Pensilvania\"}, \n\t\"temperature\": [37.3, 36.8, 36.4, 36.0, 35.6, 35.3, 35.0, 34.9, 35.8, 38.0, 40.2, 42.3, 43.8, 44.9, 45.5, 45.7, 44.9, 43.0, 41.7, 40.8, 39.9, 39.2, 38.6, 38.1]\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/weather/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"weather",
+						""
+					]
+				},
+				"description": "Create Weather"
+			},
+			"response": []
+		},
+		{
+			"name": "Get / Filter Weather",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 1, \n\t\"date\": \"1985-04-16\", \n\t\"location\": {\"lat\": 36.1189, \"lon\": -86.6892, \"city\": \"Jenkintown\", \"state\": \"Pensilvania\"}, \n\t\"temperature\": [37.3, 36.8, 36.4, 36.0, 35.6, 35.3, 35.0, 34.9, 35.8, 38.0, 40.2, 42.3, 43.8, 44.9, 45.5, 45.7, 44.9, 43.0, 41.7, 40.8, 39.9, 39.2, 38.6, 38.1]\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/weather/?start_date=1985-01-01&end_date=1985-03-31&lat=36.1189&lon=-86.6892&city=Jenkintown&state=Pensilvania",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"weather",
+						""
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "1985-01-01"
+						},
+						{
+							"key": "end_date",
+							"value": "1985-03-31"
+						},
+						{
+							"key": "lat",
+							"value": "36.1189"
+						},
+						{
+							"key": "lon",
+							"value": "-86.6892"
+						},
+						{
+							"key": "city",
+							"value": "Jenkintown"
+						},
+						{
+							"key": "state",
+							"value": "Pensilvania"
+						}
+					]
+				},
+				"description": "Filter Weather by latitute / longtitute / start_date / end_date / city"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Individual Weather",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 1, \n\t\"date\": \"1985-04-16\", \n\t\"location\": {\"lat\": 36.1189, \"lon\": -86.6892, \"city\": \"Jenkintown\", \"state\": \"Pensilvania\"}, \n\t\"temperature\": [37.3, 36.8, 36.4, 36.0, 35.6, 35.3, 35.0, 34.9, 35.8, 38.0, 40.2, 42.3, 43.8, 44.9, 45.5, 45.7, 44.9, 43.0, 41.7, 40.8, 39.9, 39.2, 38.6, 38.1]\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/weather/1/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"weather",
+						"1",
+						""
+					]
+				},
+				"description": "Delete Weather"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete All Weather",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 1, \n\t\"date\": \"1985-04-16\", \n\t\"location\": {\"lat\": 36.1189, \"lon\": -86.6892, \"city\": \"Jenkintown\", \"state\": \"Pensilvania\"}, \n\t\"temperature\": [37.3, 36.8, 36.4, 36.0, 35.6, 35.3, 35.0, 34.9, 35.8, 38.0, 40.2, 42.3, 43.8, 44.9, 45.5, 45.7, 44.9, 43.0, 41.7, 40.8, 39.9, 39.2, 38.6, 38.1]\n}"
+				},
+				"url": {
+					"raw": "localhost:8000/weather/erase/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"weather",
+						"erase",
+						""
+					]
+				},
+				"description": "Delete all weather"
+			},
+			"response": []
+		}
+	]
+}
